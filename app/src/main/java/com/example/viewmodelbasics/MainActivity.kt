@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStoreOwner
 import com.example.viewmodelbasics.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -13,7 +12,7 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         textViewNumber.text = viewModel.number.toString()
 
